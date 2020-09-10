@@ -1,5 +1,4 @@
 package de.alextop.application;
-
 import de.alextop.data.ScannerData;
 import java.util.Arrays;
 import java.util.Scanner;

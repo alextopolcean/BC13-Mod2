@@ -2,7 +2,6 @@ package de.alextop.data;
 import java.util.Scanner;
 import java.util.Arrays;
 
-
 public class ScannerData {
     static Scanner scanner = new Scanner(System.in);
     public static int[] fillArray(int[] array) {
