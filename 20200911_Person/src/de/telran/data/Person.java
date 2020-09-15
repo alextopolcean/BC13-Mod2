@@ -1,17 +1,23 @@
 package de.telran.data;
+
 import java.util.Objects;
 
 public class Person {
     private String name;
     private int age;
     private double height;
+    private Adress adress;
 
-    public Person(String name, int age, double height) {
+
+    public Person(String name, int age, double height, Adress adress) {
         this.name = name;
         this.age = age;
         this.height = height;
+        this.adress = adress;
 
     }
+
+
     public String getName() {
         return name;
     }
@@ -36,7 +42,7 @@ public class Person {
         return
                 "Имя:" + " " + name +
                         ", Возраст:" + " " + age +
-                        ", Рост:" + " " + height;
+                        ", Рост:" + " " + height + " " +  adress;
     }
 
     public static void displayOutPerson(Person[] persons) {
@@ -62,6 +68,7 @@ public class Person {
 
 
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -137,7 +144,7 @@ public class Person {
 
         }
     }
-    
+
     private double compareToPersonByHeight(Person persons) {
         if (this.height > persons.height)
             return 1;
@@ -155,6 +162,30 @@ public class Person {
                     persons[j] = temp;
                 }
             }
+        }
+    }
+
+    public static Person findPersonByAdress(Person[] persons, Adress adress) {
+        for (Person p : persons) {
+            if (adress.equals(p.adress)) {
+                return p;
+            }
+        }
+        System.out.println("Имя не найдено");
+        return null;
+
+    }
+    public static void displayPersonByAdress (Person[]persons, Adress adress){
+        boolean flag = false;
+        for (Person p : persons){
+            if(adress.equals(p.adress)){
+                System.out.println(p);
+                flag = true;
+            }
+            if (!flag){
+                System.out.println("Имя не найдено");
+            }
+
         }
     }
 }
