@@ -69,5 +69,4 @@ public class Date {
         return year + "/" + month + "/" + day;
 
     }
-
 }
