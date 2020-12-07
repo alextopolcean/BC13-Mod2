@@ -26,6 +26,10 @@ public class Library {
         return false;
     }
 
+    public Book[] getBooks() {
+        return books;
+    }
+
     public boolean deleteBook(Book book) {
         for (int i = 0; i < size; i++) {
             if (books[i].equals(book)) {
